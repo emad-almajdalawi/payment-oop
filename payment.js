@@ -7,9 +7,10 @@
 class User {
     static id = 1
 
-    constructor(name) {
+    constructor(name, balance) {
         this.userId = User.id.toString()
         this.name = name
+        this.bankAccount = new Bank(balance)
         User.id++
     }
 
@@ -43,7 +44,7 @@ class Product {
         if (typeof percentage == 'number') {
             if (percentage <= 1 && percentage >= 0) {
                 this.price = this.price - this.price * percentage
-                return `The new price of ${this.name} is ${this.price}`
+                return `The new price of ${this.name} is $${this.price}`
             }
             else return 'Please enter a number between 0 and 1'
         }
@@ -123,7 +124,9 @@ phone = new Product('Phone', 500)
 laptop = new Product('LapTop', 1000)
 car = new Product('Car', 12000)
 car2 = new Product('Car2', 10000)
-car2.sale(0.1)
+
+console.log(car2.sale(10))
+console.log(car2.sale(0.1))
 
 console.log(phone)
 console.log(laptop)
@@ -132,9 +135,9 @@ console.log(car2)
 
 
 // Users instances
-mohammad = new User('Mohammad')
-jehad = new User('Jehad')
-emad = new User('Emad')
+mohammad = new User('Mohammad', 400)
+jehad = new User('Jehad', 1500)
+emad = new User('Emad', 15000)
 
 console.log(mohammad)
 console.log(mohammad.userInfo)
@@ -144,26 +147,18 @@ console.log(emad)
 console.log(emad.userInfo)
 
 
-// Bank-accounts instances
-acc1 = new Bank(15000)
-acc2 = new Bank(1500)
-acc3 = new Bank(400)
-
-console.log(acc1)
-console.log(acc2)
-console.log(acc3)
-
-
 // deposits
-console.log(acc1.deposit('50'))
-console.log(acc1.deposit(50))
+console.log(mohammad.bankAccount.deposit('50'))
+console.log(mohammad.bankAccount.deposit(50))
+
 
 //withdraw
-console.log(acc1.withdraw('50'))
-console.log(acc1.withdraw(50))
+console.log(mohammad.bankAccount.withdraw('50'))
+console.log(mohammad.bankAccount.withdraw(50))
+
 
 // buy 
-console.log(acc1.buy('car'))
-console.log(acc1.buy(car))
-console.log(acc1.buy(car))
-console.log(acc3.buy(car))
+console.log(mohammad.bankAccount.buy('car'))
+console.log(mohammad.bankAccount.buy(car))
+console.log(mohammad.bankAccount.buy(car))
+console.log(emad.bankAccount.buy(car))
