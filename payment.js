@@ -3,6 +3,7 @@
 /**
  * A class to create user objects which contains name and userId (which is a unique id).
  * @param {String} name The user's name.
+ * @param {Number} balance The intial balance of the bank account.
  */
 class User {
     static id = 1
