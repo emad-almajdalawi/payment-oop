@@ -1,4 +1,4 @@
-// "use strict";
+"use strict";
 
 /**
  * A class to create user objects which contains name and userId (which is a unique id).
@@ -150,10 +150,10 @@ class Bank {
 
 
 // Products instances
-phone = new Product('Phone', 500)
-laptop = new Product('LapTop', 1000)
-car = new Product('Car', 12000)
-car2 = new Product('Car2', 10000)
+let phone = new Product('Phone', 500)
+let laptop = new Product('LapTop', 1000)
+let car = new Product('Car', 12000)
+let car2 = new Product('Car2', 10000)
 
 console.log(car2.sale(10))  // Please enter a number between 0 and 1
 console.log(car2.sale(0.1)) // The new price of Car2 is $9000
@@ -165,9 +165,9 @@ console.log(car2) // Product {name: 'Car2', price: 9000}
 
 
 // Users instances
-mohammad = new User('Mohammad')
-jehad = new User('Jehad')
-emad = new User('Emad')
+let mohammad = new User('Mohammad')
+let jehad = new User('Jehad')
+let emad = new User('Emad')
 
 console.log(mohammad) // User {userId: '1', name: 'Mohammad', bankAccount: Bank}
 console.log(mohammad.userInfo) //  Mohammad is the owner of the account with the id 1
