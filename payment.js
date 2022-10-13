@@ -41,7 +41,7 @@ class Product {
      * @returns {String} The new price of the product.
      */
     sale(percentage) {
-        if (!typeof percentage == 'number') return 'Please enter a number!'
+        if (typeof percentage != 'number') return 'Please enter a number!'
 
         if (percentage <= 1 && percentage >= 0) {
             this.price = this.price - this.price * percentage
